@@ -1,10 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-
-const menus = [
-  { path: "/dashboard", name: "Dashboard" },
-  { path: "/comment", name: "Comment" }
-];
+import { menus } from "../../App";
 
 const MenuList = () => {
   const { pathname } = useLocation();
