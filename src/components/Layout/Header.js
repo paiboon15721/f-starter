@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default () => (
   <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -15,4 +15,4 @@ export default () => (
       </li>
     </ul>
   </nav>
-);
+)

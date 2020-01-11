@@ -1,15 +1,17 @@
-import React from "react";
-import Layout from "./components/Layout";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import CommentApp from "./pages/CommentApp";
-import Dashboard from "./pages/Dashboard";
-import TestContext from "./pages/TestContext";
+import React from 'react'
+import Layout from 'components/Layout'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import CommentApp from 'pages/CommentApp'
+import Dashboard from 'pages/Dashboard'
+import TestContext from 'pages/TestContext'
+import ReactUse from 'pages/ReactUse'
 
 export const menus = [
-  { path: "/dashboard", name: "Dashboard", component: Dashboard },
-  { path: "/comment", name: "Comment", component: CommentApp },
-  { path: "/context", name: "Context", component: TestContext }
-];
+  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/comment', name: 'Comment', component: CommentApp },
+  { path: '/context', name: 'Context', component: TestContext },
+  { path: '/react-use', name: 'ReactUse', component: ReactUse },
+]
 
 const App = () => {
   return (
@@ -24,7 +26,7 @@ const App = () => {
         </Switch>
       </Layout>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App

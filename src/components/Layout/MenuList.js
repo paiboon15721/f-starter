@@ -1,9 +1,9 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { menus } from "../../App";
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { menus } from 'App'
 
 const MenuList = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   return (
     <nav className="col-md-2 d-none d-md-block bg-light sidebar">
@@ -13,7 +13,7 @@ const MenuList = () => {
             <li key={v.path} className="nav-item">
               <Link
                 to={v.path}
-                className={`nav-link${pathname === v.path ? " active" : ""}`}
+                className={`nav-link${pathname === v.path ? ' active' : ''}`}
               >
                 {v.name}
               </Link>
@@ -22,7 +22,7 @@ const MenuList = () => {
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default MenuList;
+export default MenuList

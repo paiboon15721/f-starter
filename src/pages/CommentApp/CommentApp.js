@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import CommentItem from "./CommentItem";
+import React, { useState } from 'react'
+import Header from './Header'
+import CommentItem from './CommentItem'
 
 const CommentApp = props => {
-  const [currentComment, setCurrentComment] = useState("");
+  const [currentComment, setCurrentComment] = useState('')
 
   const handleCommentChange = e => {
-    setCurrentComment(e.target.value);
-  };
+    setCurrentComment(e.target.value)
+  }
 
   const handleSubmit = () => {
-    props.setComments([currentComment, ...props.comments]);
-    setCurrentComment("");
-  };
+    props.setComments([currentComment, ...props.comments])
+    setCurrentComment('')
+  }
 
   return (
     <div className="container">
@@ -31,7 +31,7 @@ const CommentApp = props => {
         <CommentItem key={k} comment={v} />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CommentApp;
+export default CommentApp

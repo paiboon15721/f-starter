@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "./Header";
-import MenuList from "./MenuList";
+import React from 'react'
+import Header from './Header'
+import MenuList from './MenuList'
 
 const Layout = props => {
   return (
@@ -15,7 +15,7 @@ const Layout = props => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

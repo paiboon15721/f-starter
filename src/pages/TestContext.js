@@ -1,8 +1,8 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext } from 'react'
 
-const globalTheme = ["danger", "primary", "success", "warning"];
+const globalTheme = ['danger', 'primary', 'success', 'warning']
 
-const themeContext = createContext();
+const themeContext = createContext()
 
 const Header = () => (
   <themeContext.Consumer>
@@ -12,10 +12,10 @@ const Header = () => (
       </div>
     )}
   </themeContext.Consumer>
-);
+)
 
 const ChangeTheme = () => {
-  const v = useContext(themeContext);
+  const v = useContext(themeContext)
 
   return (
     <>
@@ -26,15 +26,15 @@ const ChangeTheme = () => {
       <Header />
       <Header />
     </>
-  );
-};
+  )
+}
 
 const App = () => {
-  const [theme, setTheme] = useState("primary");
+  const [theme, setTheme] = useState('primary')
 
   const changeTheme = () => {
-    setTheme(globalTheme[Math.floor(Math.random() * globalTheme.length)]);
-  };
+    setTheme(globalTheme[Math.floor(Math.random() * globalTheme.length)])
+  }
 
   return (
     <themeContext.Provider value={{ theme, changeTheme }}>
@@ -42,7 +42,7 @@ const App = () => {
       <h1>hello</h1>
       <Header />
     </themeContext.Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
