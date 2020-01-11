@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import CommentApp from "./CommentApp";
 
-function App() {
+const App = () => {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/comments").then(res => {
+      setComments(res.data.slice(0, 50).map(v => v.body));
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="row">
+      <div className="col">
+        <CommentApp comments={comments} setComments={setComments} />
+      </div>
+      <div className="col">
+        <CommentApp comments={comments} setComments={setComments} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
