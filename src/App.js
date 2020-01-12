@@ -14,6 +14,7 @@ import Redux from 'pages/Redux'
 import ShowCount from 'pages/ShowCount'
 import UserTable from 'pages/UserTable'
 import RegisterForm from 'pages/RegisterForm'
+import FormDemo from 'pages/FormDemo'
 
 export const menus = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -24,6 +25,7 @@ export const menus = [
   { path: '/show-count', name: 'Show Count', component: ShowCount },
   { path: '/user-table', name: 'User Table', component: UserTable },
   { path: '/register-form', name: 'Register Form', component: RegisterForm },
+  { path: '/form-demo', name: 'Form Demo', component: FormDemo },
 ]
 
 const App = () => {
