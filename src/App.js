@@ -10,12 +10,16 @@ import CommentApp from 'pages/CommentApp'
 import Dashboard from 'pages/Dashboard'
 import TestContext from 'pages/TestContext'
 import ReactUse from 'pages/ReactUse'
+import Redux from 'pages/Redux'
+import ShowCount from 'pages/ShowCount'
 
 export const menus = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/comment', name: 'Comment', component: CommentApp },
   { path: '/context', name: 'Context', component: TestContext },
   { path: '/react-use', name: 'ReactUse', component: ReactUse },
+  { path: '/redux', name: 'Redux', component: Redux },
+  { path: '/show-count', name: 'Show Count', component: ShowCount },
 ]
 
 const App = () => {
