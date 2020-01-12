@@ -4,6 +4,7 @@ import { Table } from 'antd'
 const App = props => {
   useEffect(() => {
     props.fetchUsers()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const columns = [
