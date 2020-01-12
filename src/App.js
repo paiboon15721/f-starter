@@ -14,7 +14,8 @@ import Redux from 'pages/Redux'
 import ShowCount from 'pages/ShowCount'
 import UserTable from 'pages/UserTable'
 import RegisterForm from 'pages/RegisterForm'
-import FormDemo from 'pages/FormDemo'
+import FormControlled from 'pages/FormControlled'
+import FormUnControlled from 'pages/FormUnControlled'
 
 export const menus = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -25,7 +26,16 @@ export const menus = [
   { path: '/show-count', name: 'Show Count', component: ShowCount },
   { path: '/user-table', name: 'User Table', component: UserTable },
   { path: '/register-form', name: 'Register Form', component: RegisterForm },
-  { path: '/form-demo', name: 'Form Demo', component: FormDemo },
+  {
+    path: '/form-controlled',
+    name: 'Form Controlled',
+    component: FormControlled,
+  },
+  {
+    path: '/form-uncontrolled',
+    name: 'Form unControlled',
+    component: FormUnControlled,
+  },
 ]
 
 const App = () => {
