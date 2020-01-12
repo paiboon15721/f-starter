@@ -22,4 +22,4 @@ const App = ({ num, increment, decrement }) => (
   </div>
 )
 
-export default connect(state => ({ num: state }), actions)(App)
+export default connect(state => ({ num: state.counter }), actions)(App)

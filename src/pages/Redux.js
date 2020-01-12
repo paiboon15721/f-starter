@@ -20,7 +20,7 @@ const App = props => {
 
 const mapStateToProps = state => {
   return {
-    num: state,
+    num: state.counter,
   }
 }
 

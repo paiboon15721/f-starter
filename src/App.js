@@ -12,6 +12,7 @@ import TestContext from 'pages/TestContext'
 import ReactUse from 'pages/ReactUse'
 import Redux from 'pages/Redux'
 import ShowCount from 'pages/ShowCount'
+import UserTable from 'pages/UserTable'
 
 export const menus = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -20,6 +21,7 @@ export const menus = [
   { path: '/react-use', name: 'ReactUse', component: ReactUse },
   { path: '/redux', name: 'Redux', component: Redux },
   { path: '/show-count', name: 'Show Count', component: ShowCount },
+  { path: '/user-table', name: 'User Table', component: UserTable },
 ]
 
 const App = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
 import 'antd/dist/antd.css'
@@ -16,12 +16,23 @@ function counter(state = 0, action) {
   }
 }
 
+function users(state = { users: [], loading: false }, action) {
+  switch (action.type) {
+    case 'FETCH_USERS':
+      return { ...state, users: action.payload }
+    default:
+      return state
+  }
+}
+
+const rootReducer = combineReducers({ counter, users })
+
 let store = createStore(
-  counter,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 )
 
-store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.log({ state: store.getState() }))
 store.dispatch({ type: 'INCREMENTS', payload: 10 })
 
 ReactDOM.render(
