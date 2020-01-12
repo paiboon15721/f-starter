@@ -16,6 +16,7 @@ import UserTable from 'pages/UserTable'
 import RegisterForm from 'pages/RegisterForm'
 import FormControlled from 'pages/FormControlled'
 import FormUnControlled from 'pages/FormUnControlled'
+import FormHook from 'pages/FormHook'
 
 export const menus = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -35,6 +36,11 @@ export const menus = [
     path: '/form-uncontrolled',
     name: 'Form unControlled',
     component: FormUnControlled,
+  },
+  {
+    path: '/form-hook',
+    name: 'Form Hook',
+    component: FormHook,
   },
 ]
 
