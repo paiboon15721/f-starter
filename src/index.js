@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import ReduxThunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import App from './App'
 import 'antd/dist/antd.css'
@@ -19,7 +20,9 @@ function counter(state = 0, action) {
 function users(state = { users: [], loading: false }, action) {
   switch (action.type) {
     case 'FETCH_USERS':
-      return { ...state, users: action.payload }
+      return { ...state, loading: true }
+    case 'FETCH_USERS_SUCCESS':
+      return { ...state, users: action.payload, loading: false }
     default:
       return state
   }
@@ -27,9 +30,10 @@ function users(state = { users: [], loading: false }, action) {
 
 const rootReducer = combineReducers({ counter, users })
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 let store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  composeEnhancers(applyMiddleware(ReduxThunk)),
 )
 
 store.subscribe(() => console.log({ state: store.getState() }))
